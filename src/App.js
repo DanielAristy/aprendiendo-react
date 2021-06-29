@@ -1,7 +1,11 @@
 import React, {Fragment, useState} from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
+  //Declarando multiples estados
+  const [ count, setCount ] = useState(0);
+  const [ age, setAge ] = useState(27);
+  const [ name, setName ] = useState('Daniel');
+  const [lastName, setLastName] = useState('Aristizabal Castaño')
 
   const handleIncreaseClick = () => {
     setCount(count + 1);
@@ -13,6 +17,7 @@ function App() {
 
   return (
     <Fragment>
+      <p>Mi nombre es {name} {lastName} y tengo {age} años.</p>
       <p>Contador {count}</p>
       <button onClick={handleIncreaseClick}>
         Aumentar
