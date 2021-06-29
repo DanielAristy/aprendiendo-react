@@ -1,11 +1,12 @@
-import React, {Fragment, useState} from "react";
+import React, {Fragment, useState, useEffect} from "react";
 
 function App() {
   //Declarando multiples estados
   const [ count, setCount ] = useState(0);
-  const [ age, setAge ] = useState(27);
-  const [ name, setName ] = useState('Daniel');
-  const [lastName, setLastName] = useState('Aristizabal Castaño')
+  const [ users, setUsers ] = useState([
+    {id: 1, name: 'Daniel', lastName: 'Aristizabal Castaño', age: 27},
+    {id: 1, name: 'Jose', lastName: 'Ramirez', age: 56},
+  ]);
 
   const handleIncreaseClick = () => {
     setCount(count + 1);
@@ -15,9 +16,16 @@ function App() {
     setCount(count - 1);
   }
 
+  useEffect(() => {
+    document.title = `Contador ${count}`;
+  })
+
   return (
     <Fragment>
-      <p>Mi nombre es {name} {lastName} y tengo {age} años.</p>
+      <h2>Usuarios</h2>
+      {users.map(user => (
+        <p>Mi nombre es {user.name} {user.lastName} y tengo {user.age} años.</p>
+      ))}
       <p>Contador {count}</p>
       <button onClick={handleIncreaseClick}>
         Aumentar
