@@ -1,4 +1,5 @@
-import React, {Fragment, useState, useEffect} from "react";
+import React, { useState, useEffect} from "react";
+import { Header }  from "./components/Header";
 
 function App() {
   //Declarando multiples estados
@@ -21,7 +22,8 @@ function App() {
   })
 
   return (
-    <Fragment>
+    <div className="App">
+      <Header />
       <h2>Usuarios</h2>
       {users.map(user => (
         <p>Mi nombre es {user.name} {user.lastName} y tengo {user.age} años.</p>
@@ -33,7 +35,7 @@ function App() {
       <button onClick={handleDecreaseClick}>
         Disminuir
       </button>
-    </Fragment>
+    </div>
   );
 }
 
