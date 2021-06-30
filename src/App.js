@@ -23,7 +23,7 @@ function App() {
   })
 
   return (
-    <div className="App">
+    <>
       <Header />
       <h2>Usuarios</h2>
       {users.map(user => (
@@ -37,7 +37,7 @@ function App() {
         Disminuir
       </button>
       <Characters />
-    </div>
+    </>
   );
 }
 
