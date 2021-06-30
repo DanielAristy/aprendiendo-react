@@ -1,0 +1,20 @@
+import React , { useState } from 'react'
+
+export function Header() {
+
+    const [darkMode, setDarkMode] = useState(false);
+
+    const handleClick = () => {
+        setDarkMode(!darkMode);
+    }
+
+    return (
+        <div className="Header">
+            <h1>ReactHooks</h1>
+            <button type="button" onClick={handleClick}>
+                {darkMode ? 'DarkMode': 'Light Mode'}
+            </button>
+        </div>
+    );
+    
+};
