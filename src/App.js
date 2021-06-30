@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from "react";
-import { Header }  from "./components/Header";
+import { Header } from "./components/Header";
+import { Characters } from "./components/Characters";
 
 function App() {
   //Declarando multiples estados
@@ -35,6 +36,7 @@ function App() {
       <button onClick={handleDecreaseClick}>
         Disminuir
       </button>
+      <Characters />
     </div>
   );
 }
